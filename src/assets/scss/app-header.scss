@@ -1,5 +1,6 @@
 .app-header {
 	position: fixed;
+	z-index: 10;
 	top: 0;
 	display: flex;
 	width: 100%;
@@ -17,11 +18,46 @@
 	&__logo {
 		flex-shrink: 0;
 		display: inline-flex;
-		width: auto;
+		align-items: center;
+		justify-content: center;
+		width: var(--header-height);
 		height: var(--header-height);
+		padding: 0 10px;
+		background-color: var(--primary-color);
+		color: white;
+		transition: width 0.2s ease-in-out;
 
 		img, svg {
+			width: auto;
+			height: 35px;
 			object-fit: cover;
+		}
+
+		.logo {
+			height: 35px;
+			width: auto;
+
+			&.-large {
+				display: none;
+			}
+
+			&:not(.-large) {
+				display: block;
+			}
+		}
+
+		&.-large {
+			@include adaptive_padding();
+			justify-content: flex-start;
+			width: var(--aside-width);
+
+			.logo:not(.-large) {
+				display: none;
+			}
+
+			.logo.-large {
+				display: block;
+			}
 		}
 	}
 
@@ -46,17 +82,31 @@
 		max-width: 25vw;
 	}
 
-	.navigation-toggle {
+	&__toggle-mobile {
 		display: none;
 	}
 
 	@include media_breakpoint(tablet) {
+		&__logo.-large {
+			justify-content: center;
+			width: var(--header-height);
+
+			.logo:not(.-large) {
+				display: block;
+			}
+
+			.logo.-large {
+				display: none;
+			}
+		}
+
 		&__navigation {
 			padding: 0;
 		}
 
-		.navigation-toggle {
+		&__toggle-mobile {
 			display: block;
+			margin-right: auto;
 		}
 	}
 

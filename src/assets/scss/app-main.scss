@@ -35,7 +35,9 @@
 
 	@include media_breakpoint(tablet) {
 		&__aside {
-			display: none;
+			position: absolute;
+			width: 0;
+			padding: 0;
 		}
 	}
 }
