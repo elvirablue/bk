@@ -1,0 +1,36 @@
+
+$media_queries : (
+	'small-mobile'    : unquote("only screen and (max-width: 374px) "),
+	'mobile'    : unquote("only screen and (max-width: #{$mq-mobile - 1}) "),
+	'tablet'    : unquote("only screen and (max-width: #{$mq-tablet}) "),
+	'desktop'   : unquote("only screen and (min-width: #{$mq-tablet + 1}) "),
+	'landscape' : unquote("screen and (orientation:landscape) "),
+	'portrait'  : unquote("screen and (orientation:portrait) "),
+	'touch-device'	: unquote("(pointer: coarse) and (hover: none) "),
+);
+
+@mixin media_breakpoint($breakpoints) {
+	$conditions : ();
+	@each $breakpoint in $breakpoints {
+		// If the key exists in the map
+		$conditions: append(
+				$conditions,
+				#{inspect(map-get($media_queries, $breakpoint))},
+				comma
+		);
+	}
+
+	@media #{$conditions} {
+		@content;
+	}
+}
+
+@mixin adaptive_padding() {
+	padding-left: var(--main-padding);
+	padding-right: var(--main-padding);
+
+	@include media_breakpoint(mobile) {
+		padding-left: var(--mobile-padding);
+		padding-right: var(--mobile-padding);
+	}
+}

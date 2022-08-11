@@ -1,0 +1,26 @@
+
+.notification-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--inner-padding);
+	color: currentColor;
+	transition: color 0.1s ease-in-out;
+
+	img, svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	&:hover, &.-active, &.-open {
+		color: var(--primary-color);
+	}
+}
+
+.navigation-toggle {
+	width: var(--header-height);
+	height: var(--header-height);
+	font-size: 40px;
+	color: white;
+	background-color: var(--primary-color);
+}

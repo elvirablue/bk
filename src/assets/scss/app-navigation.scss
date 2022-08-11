@@ -1,0 +1,55 @@
+.app-navigation {
+	display: flex;
+	height: var(--header-height);
+	padding: 0 calc(var(--main-padding) / 2);
+	font-weight: 600;
+
+	&__item {
+		display: inline-flex;
+		height: inherit;
+		padding: 0 calc(var(--main-padding) / 2);
+	}
+
+	&__link {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: inherit;
+		white-space: nowrap;
+		transition: color 0.1s ease-in-out;
+
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background-color: currentColor;
+			transition: width 0.2s ease-in-out;
+		}
+
+		&:hover {
+			color: var(--primary-color);
+		}
+
+		&.-active {
+			color: var(--primary-color);
+
+			&:before {
+				width: 100%;
+			}
+		}
+
+		@include media_breakpoint(touch-device){
+			&:hover {
+				color: currentColor;
+			}
+		}
+	}
+
+	@include media_breakpoint(tablet) {
+		display: none;
+	}
+}

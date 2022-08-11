@@ -1,0 +1,31 @@
+:root {
+	--main-background: #FFFFFF;
+	--secondary-background: #F5F7FA;
+
+	--header-height: 54px;
+	--top-bar-height: 40px;
+	--aside-width: 280px;
+
+	--content-width: 700px;
+	--main-padding: 32px;
+	--mobile-padding: 20px;
+	--inner-padding: 8px;
+	--root-radius: 4px;
+
+	--primary-color: #2836B0;
+	--primary-darker-color: #222D91;
+	--main-text-color: #283247;
+	--secondary-text-color: #9398a3;
+
+	--svg-color: #ABAFBA;
+	--border-color: #D6DCEA;
+}
+
+$mq-mobile: 668px;
+$mq-tablet: 1264px;
+
+$scroll-custom-size: 5px;
+$scroll-thumb-bg: var(--border-color);
+$scroll-thumb-hover-bg: var(--svg-color);
+$scroll-track-bg: var(--main-background);
+$scroll-thumb-border: 0px solid var(--main-background);

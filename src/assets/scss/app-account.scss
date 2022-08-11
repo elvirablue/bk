@@ -1,0 +1,25 @@
+.app-account {
+	flex: 1 0 100%;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	height: 100%;
+	color: var(--secondary-text-color);
+	overflow: hidden;
+
+	&__notifications {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding-right: var(--inner-padding);
+		color: currentColor;
+	}
+
+	&__profile {
+		display: flex;
+		width: auto;
+		max-width: calc(100% - 48px);
+		color: currentColor;
+	}
+}
+

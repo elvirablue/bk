@@ -1,0 +1,48 @@
+.profile {
+	display: flex;
+	width: 100%;
+	cursor: pointer;
+	color: currentColor;
+	transition: color 0.1s ease-in-out;
+
+	&__content {
+		display: flex;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__avatar {
+		flex: 0 0 36px;
+		display: inline-flex;
+		width: 36px;
+		height: 36px;
+		margin-right: var(--inner-padding);
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&__name {
+		flex: 0 1 auto;
+		display: block;
+		white-space: nowrap;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__action {
+		flex: 0 0 20px;
+		display: inline-flex;
+		margin-left: calc(var(--inner-padding) / 2);
+	}
+
+	&:hover, .-active, .-open {
+		color: var(--primary-color);
+	}
+
+	@include media_breakpoint(small-mobile) {
+		&__name {
+			font-size: 0;
+		}
+	}
+}
